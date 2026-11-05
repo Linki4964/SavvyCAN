@@ -18,6 +18,7 @@
 #include "bisectwindow.h"
 #include "re/flowviewwindow.h"
 #include "framesenderwindow.h"
+#include "udssenderwindow.h"
 #include "re/filecomparatorwindow.h"
 #include "dbc/dbcmaineditor.h"
 #include "mainsettingsdialog.h"
@@ -104,6 +105,7 @@ private slots:
     void showPlaybackWindow();
     void showFlowViewWindow();
     void showFrameSenderWindow();
+    void showUdsSenderWindow();
     void showSingleMultiWindow();
     void showRangeWindow();
     void showFuzzyScopeWindow();
@@ -235,6 +237,7 @@ private:
     FramePlaybackWindow *playbackWindow;
     FlowViewWindow *flowViewWindow;
     FrameSenderWindow *frameSenderWindow;
+    UdsSenderWindow *udsSenderWindow = nullptr;
     DBCMainEditor *dbcMainEditor;
     FileComparatorWindow *comparatorWindow;
     MainSettingsDialog *settingsDialog;

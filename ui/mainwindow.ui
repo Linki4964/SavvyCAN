@@ -489,6 +489,7 @@
     </property>
     <addaction name="action_Playback"/>
     <addaction name="action_Custom"/>
+    <addaction name="actionUDS_Sender"/>
     <addaction name="actionScripting_INterface"/>
     <addaction name="actionFuzzing"/>
     <addaction name="actionUDS_Scanner"/>
@@ -541,6 +542,11 @@
   <action name="action_Playback">
    <property name="text">
     <string>Playback</string>
+   </property>
+  </action>
+  <action name="actionUDS_Sender">
+   <property name="text">
+    <string>UDS Sender</string>
    </property>
   </action>
   <action name="action_Custom">

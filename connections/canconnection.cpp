@@ -57,7 +57,8 @@ CANConnection::CANConnection(QString pPort,
     if(pUseThread) {
         mThread_p = new QThread();
         /* move ourself to the thread */
-        if (!moveToThread(mThread_p)) {
+        moveToThread(mThread_p);
+        if (thread() != mThread_p) {
             qWarning() << "CANConnection::start(): cannot moveToThread()";
         }
         /* start the thread */

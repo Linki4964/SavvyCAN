@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UdsSenderWindow</class>
+ <widget class="QDialog" name="UdsSenderWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>950</width><height>620</height></rect>
+  </property>
+  <property name="windowTitle"><string>UDS Sender</string></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation"><enum>Qt::Horizontal</enum></property>
+     <widget class="QGroupBox" name="groupServices">
+      <property name="title"><string>Services</string></property>
+      <layout class="QVBoxLayout" name="serviceLayout">
+       <item><widget class="QTreeWidget" name="treeServices">
+        <property name="minimumSize"><size><width>220</width><height>0</height></size></property>
+        <property name="headerHidden"><bool>true</bool></property>
+        <column><property name="text"><string>Service</string></property></column>
+       </widget></item>
+       <item><widget class="QPushButton" name="btnAddSubService">
+        <property name="text"><string>Add Sub-service</string></property>
+        <property name="toolTip"><string>Save the current request under the selected service.</string></property>
+        <property name="autoDefault"><bool>false</bool></property>
+       </widget></item>
+      </layout>
+     </widget>
+     <widget class="QSplitter" name="requestSplitter">
+      <property name="orientation"><enum>Qt::Vertical</enum></property>
+      <widget class="QWidget" name="queuePane">
+       <layout class="QVBoxLayout" name="queueLayout">
+        <item>
+         <widget class="QGroupBox" name="groupRequest">
+          <property name="title"><string>Request</string></property>
+          <layout class="QFormLayout" name="requestLayout">
+           <item row="0" column="0"><widget class="QLabel" name="lblName">
+            <property name="text"><string>Name</string></property>
+            <property name="buddy"><cstring>txtName</cstring></property>
+           </widget></item>
+           <item row="0" column="1"><widget class="QLineEdit" name="txtName"/></item>
+           <item row="1" column="0"><widget class="QLabel" name="lblRequest">
+            <property name="text"><string>Request PDU</string></property>
+            <property name="buddy"><cstring>txtRequest</cstring></property>
+           </widget></item>
+           <item row="1" column="1"><widget class="QLineEdit" name="txtRequest">
+            <property name="placeholderText"><string>22 F1 90</string></property>
+           </widget></item>
+           <item row="2" column="0" colspan="2"><widget class="QLabel" name="lblError">
+            <property name="wordWrap"><bool>true</bool></property>
+           </widget></item>
+           <item row="3" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="editButtons">
+             <item><widget class="QPushButton" name="btnAdd">
+              <property name="text"><string>Add to Queue</string></property>
+              <property name="autoDefault"><bool>false</bool></property>
+             </widget></item>
+             <item><widget class="QPushButton" name="btnUpdate">
+              <property name="text"><string>Update Selected</string></property>
+              <property name="enabled"><bool>false</bool></property>
+              <property name="autoDefault"><bool>false</bool></property>
+             </widget></item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupQueue">
+          <property name="title"><string>Request Queue</string></property>
+          <layout class="QVBoxLayout" name="tableLayout">
+           <item>
+            <layout class="QHBoxLayout" name="queueButtons">
+             <item><widget class="QPushButton" name="btnUp">
+              <property name="text"><string>Move Up</string></property>
+              <property name="enabled"><bool>false</bool></property>
+              <property name="autoDefault"><bool>false</bool></property>
+             </widget></item>
+             <item><widget class="QPushButton" name="btnDown">
+              <property name="text"><string>Move Down</string></property>
+              <property name="enabled"><bool>false</bool></property>
+              <property name="autoDefault"><bool>false</bool></property>
+             </widget></item>
+             <item><widget class="QPushButton" name="btnRemove">
+              <property name="text"><string>Remove</string></property>
+              <property name="enabled"><bool>false</bool></property>
+              <property name="autoDefault"><bool>false</bool></property>
+             </widget></item>
+            </layout>
+           </item>
+           <item><widget class="QTableWidget" name="tableQueue">
+            <property name="selectionMode"><enum>QAbstractItemView::SingleSelection</enum></property>
+            <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+            <property name="editTriggers"><set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set></property>
+            <column><property name="text"><string>Enabled</string></property></column>
+            <column><property name="text"><string>Name</string></property></column>
+            <column><property name="text"><string>Request PDU</string></property></column>
+           </widget></item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupResults">
+       <property name="title"><string>Responses</string></property>
+       <layout class="QVBoxLayout" name="resultLayout">
+        <item><widget class="QPlainTextEdit" name="txtResults">
+         <property name="readOnly"><bool>true</bool></property>
+         <property name="placeholderText"><string>Responses will appear here once sending is implemented.</string></property>
+        </widget></item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

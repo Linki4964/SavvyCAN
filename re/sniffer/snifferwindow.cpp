@@ -56,11 +56,11 @@ SnifferWindow::SnifferWindow(QWidget *parent) :
     connect(&mModel, &SnifferModel::idChange, this, &SnifferWindow::idChange);
     connect(ui->listWidget, &QListWidget::itemChanged, this, &SnifferWindow::itemChanged);
 
-    connect(ui->cbFadeInactive, &QCheckBox::checkStateChanged, this, [this](int val){mModel.setFadeInactive(val);sniffDel->setFadeInactive(val);});
-    connect(ui->cbMuteNotched, &QCheckBox::checkStateChanged, this, [this](int val){mModel.setMuteNotched(val);});
-    connect(ui->cbNoExpire, &QCheckBox::checkStateChanged, this, [this](int val){mModel.setNeverExpire(val);});
-    connect(ui->cbViewBits, &QCheckBox::checkStateChanged, this,
-            [this](int val)
+    connect(ui->cbFadeInactive, &QCheckBox::toggled, this, [this](bool val){mModel.setFadeInactive(val);sniffDel->setFadeInactive(val);});
+    connect(ui->cbMuteNotched, &QCheckBox::toggled, this, [this](bool val){mModel.setMuteNotched(val);});
+    connect(ui->cbNoExpire, &QCheckBox::toggled, this, [this](bool val){mModel.setNeverExpire(val);});
+    connect(ui->cbViewBits, &QCheckBox::toggled, this,
+            [this](bool val)
             {
                 if (val) ui->treeView->setItemDelegate(sniffDel);
                 else

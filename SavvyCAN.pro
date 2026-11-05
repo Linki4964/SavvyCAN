@@ -56,6 +56,7 @@ SOURCES += main.cpp\
     frameplaybackwindow.cpp \
     candatagrid.cpp \
     framesenderwindow.cpp \
+    udssenderwindow.cpp \
     framefileio.cpp \
     lognotes.cpp \
     lognotesdialog.cpp \
@@ -167,6 +168,7 @@ HEADERS  += mainwindow.h \
     frameplaybackwindow.h \
     candatagrid.h \
     framesenderwindow.h \
+    udssenderwindow.h \
     can_trigger_structs.h \
     framefileio.h \
     lognotes.h \
@@ -258,6 +260,7 @@ FORMS    += ui/candatagrid.ui \
     ui/frameinfowindow.ui \
     ui/frameplaybackwindow.ui \
     ui/framesenderwindow.ui \
+    ui/udssenderwindow.ui \
     ui/fuzzingwindow.ui \
     ui/graphingwindow.ui \
     ui/isotp_interpreterwindow.ui \

@@ -98,6 +98,8 @@ qt_add_executable(SavvyCAN WIN32 MACOSX_BUNDLE
     frameplaybackwindow.cpp frameplaybackwindow.h
     framesenderobject.cpp framesenderobject.h
     framesenderwindow.cpp framesenderwindow.h
+    udssenderwindow.cpp udssenderwindow.h
+    ui/udssenderwindow.ui
     github/githubaccountdialog.cpp github/githubaccountdialog.h
     github/githubbrowserdialog.cpp github/githubbrowserdialog.h
     github/githubcache.cpp github/githubcache.h

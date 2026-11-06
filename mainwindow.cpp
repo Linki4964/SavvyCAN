@@ -88,6 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :
     playbackWindow = nullptr;
     flowViewWindow = nullptr;
     frameSenderWindow = nullptr;
+    udsSenderWindow = nullptr;
     dbcMainEditor = nullptr;
     comparatorWindow = nullptr;
     settingsDialog = nullptr;
@@ -386,6 +387,7 @@ void MainWindow::killEmAll()
     killWindow(playbackWindow);
     killWindow(flowViewWindow);
     killWindow(frameSenderWindow);
+    killWindow(udsSenderWindow);
     killWindow(comparatorWindow);
     killWindow(dbcMainEditor);
     killWindow(settingsDialog);
@@ -2753,10 +2755,11 @@ void MainWindow::jumpToSearchFrame(int frameIndex)
 
 void MainWindow::showUdsSenderWindow()
 {
-    if (!udsSenderWindow) udsSenderWindow = new UdsSenderWindow(this);
+    if (!udsSenderWindow)
+    {
+        udsSenderWindow = new UdsSenderWindow(this);
+    }
     udsSenderWindow->show();
-    udsSenderWindow->raise();
-    udsSenderWindow->activateWindow();
 }
 
 void MainWindow::showFrameSenderWindow()

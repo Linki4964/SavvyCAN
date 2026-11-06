@@ -237,7 +237,7 @@ private:
     FramePlaybackWindow *playbackWindow;
     FlowViewWindow *flowViewWindow;
     FrameSenderWindow *frameSenderWindow;
-    UdsSenderWindow *udsSenderWindow = nullptr;
+    UdsSenderWindow *udsSenderWindow;
     DBCMainEditor *dbcMainEditor;
     FileComparatorWindow *comparatorWindow;
     MainSettingsDialog *settingsDialog;
